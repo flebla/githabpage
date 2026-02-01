@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+/* ============================= */
+/* BASE */
+/* ============================= */
+
 body {
   font-family: 'Inter', sans-serif;
   background: #ffffff;
@@ -11,34 +15,71 @@ body {
   line-height: 1.6;
 }
 
-/* HERO */
+/* ============================= */
+/* HERO PREMIUM */
+/* ============================= */
+
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 10%;
-  background: linear-gradient(to bottom, #000, #222);
   color: #fff;
+
+  background:
+    linear-gradient(
+      to right,
+      #3a3a3a 0%,
+      #2b2b2b 40%,
+      #1a1a1a 70%,
+      #000000 100%
+    );
+
+  background-size: cover;
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
+
+
+.hero-left {
+  max-width: 520px;
+  z-index: 2;
+}
+
+.hero-left h1 {
+  font-size: 3.8rem;
   font-weight: 800;
 }
 
-.hero-content h2 {
+.hero-left h2 {
   font-size: 1.8rem;
   font-weight: 300;
   margin: 10px 0;
   color: #ccc;
 }
 
-.hero-content p {
-  max-width: 500px;
-  margin: 20px 0;
+.hero-left p {
+  margin: 25px 0;
+  font-size: 1.05rem;
+  color: #e0e0e0;
 }
 
-/* BOTONES */
+.hero-right {
+  position: relative;
+  z-index: 2;
+  
+  left: -150px
+
+}
+
+/* ============================= */
+/* BOTONES GENERALES */
+/* ============================= */
+
 .btn {
   display: inline-block;
   padding: 12px 28px;
@@ -63,7 +104,10 @@ body {
   background: #333;
 }
 
+/* ============================= */
 /* SECCIONES */
+/* ============================= */
+
 .section {
   padding: 80px 10%;
 }
@@ -77,7 +121,10 @@ body {
   margin-bottom: 30px;
 }
 
+/* ============================= */
 /* SERVICIOS */
+/* ============================= */
+
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -91,7 +138,10 @@ body {
   border: 1px solid #ddd;
 }
 
+/* ============================= */
 /* PORTFOLIO */
+/* ============================= */
+
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -108,7 +158,96 @@ body {
   border-radius: 10px;
 }
 
+/* ============================= */
+/* PERFIL CIRCULAR */
+/* ============================= */
+
+.profile-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  transform: scale(2);              /* ← ACÁ */
+  transform-origin: center;
+  
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 0%;
+  overflow: hidden;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+ 
+ 
+
+
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  pointer-events: none;  
+}
+
+/* ============================= */
+/* BOTONES CIRCULARES */
+/* ============================= */
+
+.circle-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transition: all 0.3s ease;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.circle-btn:hover {
+  background: #E0E0E0;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* POSICIONES TIPO RELOJ */
+
+.pos-1 {
+  top: 5%;
+  right: 30%;
+}
+
+.pos-2 {
+  top: 20%;
+  right: 10%;
+}
+
+.pos-3 {
+  bottom: 39%;
+  right: 4%;
+}
+
+.pos-4 {
+  bottom: 20%;
+  right: 15%;
+}
+
+/* ============================= */
 /* FOOTER */
+/* ============================= */
+
 footer {
   background: #000;
   color: #aaa;
@@ -116,17 +255,59 @@ footer {
   padding: 20px;
 }
 
+/* ============================= */
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
+/* ============================= */
+
+@media (max-width: 900px) {
+
+   
 
   .hero {
-    padding: 0 5%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 5%;
+    background-position: center;
   }
 
-  .section {
-    padding: 60px 5%;
+  .pos-1 { top: 18%; right: 5%; }
+  .pos-2 { top: 28%; right: -5%; }
+  .pos-3 { bottom: 43%; right: -2%; }
+  .pos-4 { bottom: 30%; right: 7%; }
+
+
+
+  .hero-left {
+    margin-bottom: 40px;
   }
+  .hero-left h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
 }
+  .hero-left h2 {
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+  .profile-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    overflow: visible;
+ 
+  }
+  .profile-image img {
+    object-fit: contain;
+    right: -80%;
+  }
+  .circle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.4rem;
+  }
+
+
+}
+
