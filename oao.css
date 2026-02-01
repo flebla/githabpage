@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(to bottom, #000, #222);
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.hero-content h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.hero-content p {
+  max-width: 500px;
+  margin: 20px 0;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ccc;
+}
+
+.btn.dark {
+  background: #000;
+  color: #fff;
+}
+
+.btn.dark:hover {
+  background: #333;
+}
+
+/* SECCIONES */
+.section {
+  padding: 80px 10%;
+}
+
+.section.gray {
+  background: #f2f2f2;
+}
+
+.section h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* SERVICIOS */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* PORTFOLIO */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.work {
+  height: 180px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    padding: 0 5%;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+}
