@@ -271,10 +271,10 @@ footer {
     background-position: center;
   }
 
-  .pos-1 { top: 18%; right: 5%; }
-  .pos-2 { top: 28%; right: -5%; }
-  .pos-3 { bottom: 43%; right: -2%; }
-  .pos-4 { bottom: 30%; right: 7%; }
+  .pos-1 { top: 20%; right: 5%; }
+  .pos-2 { top: 35%; right: -5%; }
+  .pos-3 { bottom: 33%; right: -2%; }
+  .pos-4 { bottom: 15%; right: 7%; }
 
 
 
@@ -299,8 +299,11 @@ footer {
  
   }
   .profile-image img {
+      width: 150%;
+      height: 150%;
     object-fit: contain;
-    right: -80%;
+    right: -100%;
+
   }
   .circle-btn {
     width: 36px;
