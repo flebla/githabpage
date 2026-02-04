@@ -41,13 +41,15 @@ body {
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 
 
 .hero-left {
   max-width: 520px;
-  z-index: 2;
+  z-index: 100;
+  pointer-events: auto;
 }
 
 .hero-left h1 {
@@ -70,8 +72,8 @@ body {
 
 .hero-right {
   position: relative;
-  z-index: 2;
-  
+  z-index: 10;
+  pointer-events: none;
   left: -150px
 
 }
@@ -81,14 +83,21 @@ body {
 /* ============================= */
 
 .btn {
-  display: inline-block;
-  padding: 12px 28px;
+  display: inline-flex;
+  min-width: 160px;
+  padding: 14px 30px;
   background: #fff;
   color: #000;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 30px;
+  border-radius: 999px;
   transition: 0.3s;
+  align-items: center;        /* centra vertical */
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 200;
+  touch-action: manipulation;
 }
 
 .btn:hover {
@@ -136,6 +145,60 @@ body {
   padding: 30px;
   border-radius: 10px;
   border: 1px solid #ddd;
+    position: relative;
+  overflow: hidden;
+  min-height: 260px;
+
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+.card h4,
+.card p {
+  position: relative;
+  z-index: 2;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition: all 0.4s ease;
+}
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover h4,
+.card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/*aca van los linck de las imagenes de fondo*/
+.service-1 {
+  background-image: url("service3.webp");
+}
+
+.service-2 {
+  background-image: url("service1.avif");
+}
+
+.service-3 {
+  background-image: url("service2.jpg");
 }
 
 /* ============================= */
@@ -146,17 +209,37 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .work {
-  height: 180px;
-  background: #ddd;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 180px;
+  background: #ddd;
+
+  text-decoration: none;
+  color: #111;
   font-weight: 600;
+
   border-radius: 10px;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 1;
+
+  transition: transform 0.3s ease, background 0.3s ease;
+  pointer-events: auto;
 }
+
+.work:hover {
+  background: #ccc;
+  transform: translateY(-4px);
+}
+
 
 /* ============================= */
 /* PERFIL CIRCULAR */
@@ -222,6 +305,34 @@ body {
   transform: scale(1.1);
 }
 
+.contact-btn {
+  display: flex;              /* clave para mobile */
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 260px;
+  padding: 14px 20px;
+
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  text-decoration: none;
+
+  border-radius: 999px;
+  font-size: 1rem;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.contact-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
 /* POSICIONES TIPO RELOJ */
 
 .pos-1 {
@@ -251,8 +362,22 @@ body {
 footer {
   background: #000;
   color: #aaa;
+  text-align: left;
+  padding: 10px 0;
+  font-size: 0.8rem;
+}
+
+#contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+#contacto p {
+  margin-bottom: 30px;
 }
 
 /* ============================= */
@@ -269,17 +394,25 @@ footer {
     text-align: center;
     padding: 100px 5%;
     background-position: center;
+    overflow: hidden;
   }
 
   .pos-1 { top: 20%; right: 5%; }
   .pos-2 { top: 35%; right: -5%; }
   .pos-3 { bottom: 33%; right: -2%; }
   .pos-4 { bottom: 15%; right: 7%; }
-
-
+  
+  .hero-right {
+      pointer-events: none;   /* 👈 libera el click */
+      z-index: 1;
+  }
 
   .hero-left {
     margin-bottom: 100px;
+  .hero-left {
+    position: relative;
+    z-index: 300;            /* 👈 botón por encima de todo */
+  }
   }
   .hero-left h1 {
   font-size: clamp(2.4rem, 3vw, 3.6rem);
@@ -310,7 +443,33 @@ footer {
     height: 36px;
     font-size: 0.4rem;
   }
+  .btn {
+    min-width: 160px;
+    
+    max-width: 280Px;
+  }
+  .contact-btn {
+    font-size: 0.9rem;
+    padding: 12px 18px;
+  }
+  .work {
+    min-height: 160px;
+  }
+  .card::before {
+    opacity: 1;
+  }
 
-
+  .card h4,
+  .card p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    #contacto {
+    padding: 30px 5%;
+  }
+    footer {
+    font-size: 0.8rem;
+    padding: 8px 0;
+  }
 }
 
