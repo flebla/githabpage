@@ -13,7 +13,11 @@
   <header class="hero">
 
   <div class="hero-left">
-    <h1>Bruno Grimaldi</h1>
+    
+ <h1 class="logo-title">
+  <img src="logo.png">
+  <span>Bruno Grimaldi</span>
+</h1>
     <h2>Diseño & Desarrollo Web</h2>
     <p>
       Ayudo a negocios locales a tener una presencia online
@@ -98,11 +102,33 @@
     </a>
   </section>
 
-  <!-- FOOTER -->
+<section id="mensajeria" class="mail-section">
+  <div class="mail-container">
+    <h2>También podés enviarme un correo</h2>
+    <p>Respondo a la brevedad</p>
+
+    <form 
+      class="mail-form"
+      action="https://formspree.io/f/xreazezd"
+      method="POST"
+    >
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <input type="text" name="asunto" placeholder="Asunto">
+      <textarea name="mensaje" placeholder="Escribí tu mensaje..." required></textarea>
+
+      <!-- anti spam básico -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+  
   <footer>
-    <p>© 2026 Bruno Grimaldi · Diseño Web</p>
+    <p> © 2026 Bruno Grimaldi · Diseño Web</p>
   </footer>
 
 </body>
 </html>
-
