@@ -73,8 +73,8 @@ body {
 .hero-right {
   position: relative;
   z-index: 10;
-  pointer-events: none;
-  left: -150px
+  transform: translateX(-150px);
+  max-width: 100%;
 
 }
 
@@ -355,17 +355,7 @@ body {
   right: 15%;
 }
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
 
-footer {
-  background: #000;
-  color: #aaa;
-  text-align: left;
-  padding: 10px 0;
-  font-size: 0.8rem;
-}
 
 #contacto {
   display: flex;
@@ -379,7 +369,98 @@ footer {
 #contacto p {
   margin-bottom: 30px;
 }
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: -40px;
+}
 
+.logo-title img {
+  height: 80px; /* ajustá según tu diseño */
+  width: auto;
+}
+
+.logo-title span {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+}
+
+.mail-section {
+  padding: 80px 10%;
+  background: #3B3B3B;
+  color: #fff;
+}
+
+.mail-container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.mail-container h2 {
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+}
+
+.mail-container p {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.mail-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mail-form input,
+.mail-form textarea {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  padding: 14px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.mail-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.mail-form input:focus,
+.mail-form textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.mail-form button {
+  margin-top: 10px;
+  padding: 14px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mail-form button:hover {
+  background: #ddd;
+}
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+  background: #000;
+  color: #aaa;
+  text-align: left;
+  padding: 10px 0;
+  font-size: 0.8rem;
+}
 /* ============================= */
 /* RESPONSIVE */
 /* ============================= */
@@ -405,17 +486,25 @@ footer {
   .hero-right {
       pointer-events: none;   /* 👈 libera el click */
       z-index: 1;
+
   }
+  .hero-right img {
+  width: 100%;
+  height: auto;
+}
 
   .hero-left {
     margin-bottom: 100px;
-  .hero-left {
     position: relative;
     z-index: 300;            /* 👈 botón por encima de todo */
   }
-  }
+  
   .hero-left h1 {
-  font-size: clamp(2.4rem, 3vw, 3.6rem);
+  font-size: clamp(2rem, 2.4vw, 2.6rem);
+  line-height: 1.15;
+}
+.logo-title {
+  transform: translateX(30px); /* probá 10 / 16 / 24 */
 }
   .hero-left h2 {
   font-size: clamp(1rem, 3vw, 2rem);
