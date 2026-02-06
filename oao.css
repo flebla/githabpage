@@ -586,7 +586,7 @@ footer {
 .buttons-row {
     position: relative;        /* */
     width: fit-content;  
-    padding: 80px; 
+    padding: 55px; 
     margin-top: 160px;
     display: flex;
     flex-direction: row;       /* horizontal en mobile */
@@ -620,8 +620,8 @@ footer {
   }
 
   .circle-btn img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
  .circle-btn:active {
     transform: scale(0.95);
