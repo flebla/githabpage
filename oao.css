@@ -586,13 +586,13 @@ footer {
 .buttons-row {
     position: relative;        /* */
     width: fit-content;  
-    padding: 100px; 
+    padding: 80px; 
     margin-top: 160px;
     display: flex;
     flex-direction: row;       /* horizontal en mobile */
     justify-content: flex-start; 
     align-items: center;       /* centra vertical de los botones si hay diferentes alturas */
-    gap: 20px;                 
+    gap: 12px;                 
     margin-left: 0px;         /* separación del borde izquierdo */
     background: transparent;   
     opacity: 0;
@@ -603,9 +603,9 @@ footer {
 
 
   .circle-btn {
-    padding: 15px 15px;
-    font-size: 0.8rem;
-    border-radius: 8px;
+    padding: 20px 15px;
+    font-size: 0.6rem;
+    border-radius: 10px;
     opacity: 0;
     animation: fadeUp 1s ease forwards;
   }
@@ -620,8 +620,8 @@ footer {
   }
 
   .circle-btn img {
-    width: 16px;
-    height: 16px;
+    width: 30px;
+    height: 30px;
   }
  .circle-btn:active {
     transform: scale(0.95);
@@ -630,7 +630,7 @@ footer {
 
 
   .btn {
-    min-width: 160px;
+    min-width: 180px;
     
     max-width: 180Px;
   }
